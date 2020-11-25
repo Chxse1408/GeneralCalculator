@@ -3,13 +3,25 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
+/************************************
+Title: GeneralCalculator
+Application Type: Console
+Description: Calculator that can calculate addition, subtraction, multiplication, division, and quadratic functions.
+Author: Chase Kieliszewski
+Date Created: 10/13/2020
+Last Modified:11/20/2020
+************************************/
+
 namespace QuadraticFormulaC
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
+            DisplayOpenScreen();
             CalcMenu();
+            Console.WriteLine("\tdone");
+            Console.ReadKey();
         }
 
         private static void CalcMenu()
@@ -36,8 +48,8 @@ namespace QuadraticFormulaC
                         break;
 
                     case "3":
-                        runProgram = true;
-                        break;
+                        runProgram = false;
+                        return;
                 }
             } while (!runProgram);
         }
@@ -102,7 +114,7 @@ namespace QuadraticFormulaC
 
             DisplayHeader("Subtraction Calculator");
 
-            Console.WriteLine("\tInput numbers that you would like to add. (Press enter between every entry)");
+            Console.WriteLine("\tInput numbers that you would like to subtract. (Press enter between every entry)");
             Console.WriteLine("\tEnter 'DONE' when you are finished.");
             do
             {
@@ -151,6 +163,13 @@ namespace QuadraticFormulaC
         }
 
         #region tools
+
+        private static void DisplayOpenScreen()
+        {
+            Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWelcome to my calculator!");
+            Console.WriteLine("\n\t\t\t\t\t\tPress any key to continue.");
+            Console.ReadKey();
+        }
 
         private static void DisplayChooseAnOption()
         {
